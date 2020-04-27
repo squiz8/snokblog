@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  if posts
+  each post, i in posts
+      .post
+          h1
+            a(href="/posts/show/#{post._id}")
+              =post.title
+        p.meta This article was posted by #{post.author} in 
+        a(href="/categories/show/#{post.category}") #{post.category} on #{moment(post.date).format("DD-MM-YYYY")}
+        img(src="/images/uploads/#{post.mainimage}", alt="", srcset="")
+        !=shortenText(post.body, 400)
+        a.readmore(href="/posts/show/#{post._id}") Read more
+  else 
+      p No posts to display
+  

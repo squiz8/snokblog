@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Snok Blog
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+
+    .wrapper 
+        img.logo(src = '/images/blog.jpg')
+        nav
+          ul
+            li 
+              a(href="/") Home
+
+            li 
+              a(href="/posts/add") Add Posts
+
+            li
+              a(href="/categories/add") Add Categories
+        != messages()       
+        block content
